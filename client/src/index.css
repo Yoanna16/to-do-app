@@ -48,3 +48,13 @@ body {
     justify-content: space-between;
 }
 
+.tick path {
+    fill:none;
+    stroke:#000;
+    stroke-miterlimit:10;
+    stroke-width:32px;
+}
+
+.tick svg {
+    padding: 10px;
+}
