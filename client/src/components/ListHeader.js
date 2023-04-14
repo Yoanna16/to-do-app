@@ -1,4 +1,5 @@
 import React from 'react'
+import Modal from './Modal'
 
 const ListHeader = ({ listName }) => {
 
@@ -18,6 +19,7 @@ const ListHeader = ({ listName }) => {
                 </button>
 
             </div>
+            <Modal/> 
         </div>
     )
 }
