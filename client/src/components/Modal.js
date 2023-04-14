@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Modal = () => {
 
-  const mode = 'create'; 
+  const [data, setData] = useState({
+    
+  })
+
+  const mode = 'creaate'; 
 
   const handleChange = () => {
     console.log('changing')
@@ -28,11 +32,13 @@ const Modal = () => {
           onChange={handleChange}
            /> 
            <br/>
+          <label for='range'>Drag to select your current progress</label>
           <input
           required
           type='range'
           min='0'
           max='100'
+          id='range'
           name='progress'
           value={''}
           onChange={handleChange}
