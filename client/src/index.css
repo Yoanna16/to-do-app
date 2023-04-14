@@ -23,11 +23,81 @@ body {
 
 .button-container button {
     margin: 0 5px;
-    padding: 5px 10p;
+    padding: 5px 10px;
     font-size: 10px;
     border-radius: 12px;
     background-color: transparent;
 }
+
+.edit {
+    border: 1.5px solid rgb(141, 181, 145);
+    color: rgb(141, 181, 145);
+    background-color: transparent;
+    text-transform: uppercase;
+}
+
+.edit:hover {
+    background-color: rgb(182, 223, 186);
+    color: white;
+}
+
+.edit:active {
+    border: 1.5px solid rgb(141, 181, 145);
+    color: white;
+    background-color: rgb(141, 181, 145);
+}
+
+.delete {
+    border: 1.5px solid rgb(255, 175, 163);
+    color:  rgb(255, 175, 163);
+    text-transform: uppercase;
+}
+
+.delete:hover {
+    background-color: rgb(255, 175, 166);
+    color: white;
+}
+
+.delete:active {
+    border: 1.5px solid rgb(239 136 129);
+    color: white;
+    background-color: rgb(239 136 129);
+}
+
+.create {
+    border: 1.5px solid rgb(108, 115, 148);
+    color: rgb(108, 115, 148);
+    text-transform: uppercase;
+}
+
+.create:hover {
+    background-color: rgb(108, 115, 148);
+    color: white;
+}
+
+.create:active {
+    color: white;
+    background-color: rgb(91, 98, 132);
+}
+
+.signout {
+    background-color: rgb(255, 175, 163) !important;
+    border: 1.5px solid rgb(255, 175, 163);
+    color: white;
+}
+
+.signout:hover {
+    background-color: rgb(175, 94, 94) !important;
+    border: 1.5px solid rgb(175, 94, 94);
+    color: white;
+}
+
+.signout:active {
+    border: 1.5px solid rgb(175, 81, 81);
+    color: white;
+    background-color: rgb(175, 81, 81);
+}
+
 /* List Header */
 
 .list-header {
