@@ -1,14 +1,25 @@
 import React, { useState } from 'react'
 
 const Modal = () => {
+  const mode = 'create'; 
+  const editMode = mode === 'edit' ? true : false; 
 
   const [data, setData] = useState({
-    
+    user_email: '',
+    title: '',
+    progress: '',
+    date: editMode ? '' : new Date(),
   })
 
-  const mode = 'creaate'; 
 
-  const handleChange = () => {
+  // do we have to put it in useEffect or only do it when clicking on the submit button
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+
+    setData(data => ({
+      ...data,
+      [name]: value
+    }))
     console.log('changing')
   }
 
@@ -28,7 +39,7 @@ const Modal = () => {
           maxLength={30}
           placeholder=' Your task goes here'
           name='title'
-          value={''}
+          value={data.title}
           onChange={handleChange}
            /> 
            <br/>
@@ -40,7 +51,7 @@ const Modal = () => {
           max='100'
           id='range'
           name='progress'
-          value={''}
+          value={data.progress}
           onChange={handleChange}
           /> 
           <input 
