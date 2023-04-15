@@ -1,16 +1,32 @@
 import React, { useState } from 'react'
 
-const Modal = () => {
-  const mode = 'create'; 
+const Modal = ({ mode, setShowModal, getData, task }) => {
   const editMode = mode === 'edit' ? true : false; 
 
   const [data, setData] = useState({
-    user_email: '',
-    title: '',
-    progress: '',
+    user_email: editMode ? task.user_email : 'yoanna.text.com',
+    title: editMode ? task.title : null,
+    progress: editMode ? task.progress : 50,
     date: editMode ? '' : new Date(),
   })
 
+  const postData = async (e) => {
+    try {
+      const response = await fetch('http://localhost:8000/todos', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'}, 
+        body: JSON.stringify(data)
+      })
+      console.log('worked')
+      if (response.status === 200) {
+        console.log('WORKED');
+        setShowModal(false);
+        getData();
+      }
+    } catch(err) {
+      console.error(err);
+    }
+  }
 
   // do we have to put it in useEffect or only do it when clicking on the submit button
   const handleChange = (e) => {
@@ -31,7 +47,7 @@ const Modal = () => {
           <h3>
             Let's {mode} your task
           </h3>
-          <button>X</button>
+          <button onClick={() => setShowModal(false)}>X</button>
         </div>
         <form>
           <input
@@ -57,6 +73,7 @@ const Modal = () => {
           <input 
           type='submit'
           className={mode}
+          onClick={editMode ? '' : postData}
           /> 
         </form>
 
