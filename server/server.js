@@ -46,7 +46,7 @@ app.put('/todos/:id', async (req, res) => {
 })
 
 
-// edit a todo
+// delete a todo
 app.delete('/todos/:id', async (req, res) => {
     const { id } = req.params;
     try {
